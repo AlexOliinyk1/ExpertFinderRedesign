@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        News
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" ng-repeat="person in vm.news">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="/profile/{{person.id}}" ui-sref="profile.id({ profileId: person.id })" title="go to profile">
+                    {{person.name}}
+                </a>
+            </div>
+            <div class="col-md-3">
+                {{person.event}}
+            </div>
+            <div class="col-md-3">
+                {{person.eventDescription}}
+            </div>
+            <div class="col-md-3">
+                {{person.description}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,60 +1,83 @@
-<!DOCTYPE html>
-<html lang = "en">
-   
-   <head>
-      <meta charset = "utf-8">
-      <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
-      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-      
-      <title>GeekBlackHat</title>
-      
-      <!-- Bootstrap -->
-      <link href = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel = "stylesheet">
-      
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      
-      <!--[if lt IE 9]>
-      <script src = "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->      
-   </head>
-   
-   <body>
-      <h1>Hello, world! Anurag</h1>
-      
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-      
+﻿<!DOCTYPE html>
+<html ng-app="expert" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE = edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
 
+    <title>Will be dynamic title</title>
 
+    <link href="assets/сontent/bootstrap.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src = "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-      <!-- inject:angularlibs:js -->
-      <!-- only importantFile.js will be injected here -->
-      <!-- endinject -->
+<body>
 
-      <!-- angular-apps:js -->
-      <!-- endinject -->
+    <div class="row">
+        <div class="container">
 
-      <!-- angular-services:js -->
-      <!-- endinject -->
+            <div class="row">
+                <div class="col-md-2">
+                    SmartTransfer
+                </div>
+                <div class="col-md-10">
+                    <a href="#/" ui-sref="root">Home</a> |
+                    <a href="#/news" ui-sref="news">News</a> |
+                    <a href="#/communications" ui-sref="communications">Communications</a> |
+                    <a href="#/search" ui-sref="search">Search</a>
+                </div>
+            </div>
+            <hr />
 
-      <!-- angular-controllers:js -->
-      <!-- endinject -->
+            <div class="row">
+                <div class="col-md-12">
+                    Title
+                </div>
+            </div>
+            <hr />
 
-      <!-- inject:js -->
-      <script src="assets/js/angular.min.js"></script>
-      <script src="assets/js/angular-route.min.js"></script>
-      <script src="assets/js/angular-touch.min.js"></script>
-      <script src="assets/js/angular-ui-router.min.js"></script>
-      <script src="app.js"></script>
-      <script src="modules/instructor/instructor.app.js"></script>
-      <script src="modules/admin/admin.app.js"></script>
-      <script src="modules/members/members.app.js"></script>
-      <script src="modules/website/website.app.js"></script>
-      <!-- endinject -->
-   </body>
+            <div class="row">
+                <div ui-view class="col-md-12"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- base -->
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- angular components -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+    <script src="assets/js/angular-ui-router.min.js"></script>
+    <script src="assets/js/angular-touch.min.js"></script>
+
+    <!-- Modules -->
+    <script src="app/core/app.module.js"></script>
+    <script src="app/core/app.core.module.js"></script>
+    <script src="app/modules/communications/communications.module.js"></script>
+    <script src="app/modules/news/news.module.js"></script>
+    <script src="app/modules/search/search.module.js"></script>
+    <script src="app/modules/profile/profile.module.js"></script>
+
+    <!-- Configurations -->
+    <script src="app/core/app.config.js"></script>
+
+    <!-- Routes -->
+    <script src="app/modules/communications/communications.route.js"></script>
+    <script src="app/modules/news/news.route.js"></script>
+    <script src="app/modules/search/search.route.js"></script>
+    <script src="app/modules/profile/profile.route.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/modules/communications/controllers/communications.controller.js"></script>
+    <script src="app/modules/news/controllers/news.controller.js"></script>
+    <script src="app/modules/communications/controllers/messages.controller.js"></script>
+    <script src="app/modules/communications/controllers/requests.controller.js"></script>
+    <script src="app/modules/communications/controllers/updates.controller.js"></script>
+</body>
 </html>

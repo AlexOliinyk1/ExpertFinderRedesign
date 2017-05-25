@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ExpertFinder.Web", "ExpertFinder.Web\", "{11F8D356-9F9C-4D35-92F1-F13D41FDE406}"
 	ProjectSection(WebsiteProperties) = preProject
@@ -25,6 +25,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ExpertFinder.Web", "ExpertF
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ExpertFinder.Angular", "ExpertFinder.Angular\", "{0A2B359C-DA6C-456B-98B2-C937EB35B0C3}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59731"
+		Debug.AspNetCompiler.PhysicalPath = "ExpertFinder.Angular\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59731\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59731"
+		Release.AspNetCompiler.PhysicalPath = "ExpertFinder.Angular\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59731\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59731"
+		SlnRelativePath = "ExpertFinder.Angular\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +54,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{11F8D356-9F9C-4D35-92F1-F13D41FDE406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11F8D356-9F9C-4D35-92F1-F13D41FDE406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2B359C-DA6C-456B-98B2-C937EB35B0C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2B359C-DA6C-456B-98B2-C937EB35B0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
