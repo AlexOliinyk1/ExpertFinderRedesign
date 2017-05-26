@@ -11,7 +11,8 @@
             .state({
                 name: 'profile',
                 url: '/profile',
-                abstract: true
+                abstract: true,
+                template: "<ui-view></ui-view>"
             })
             .state({
                 name: 'profile.id',
