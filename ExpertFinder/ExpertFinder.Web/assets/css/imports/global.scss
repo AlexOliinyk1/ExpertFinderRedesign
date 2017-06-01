@@ -1,0 +1,43 @@
+﻿@mixin transition($sec) {
+    -webkit-transition: all $sec ease-out;
+    -moz-transition: all $sec ease-out;
+    -o-transition: all $sec ease-out;
+    transition: all $sec ease-out;
+}
+
+@mixin border-radius($border) {
+    border-radius: $border;
+    -webkit-border-radius: $border;
+    -moz-border-radius: $border;
+}
+
+@mixin box-sizing() {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+* {
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+body {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    padding-top: 111px;
+}
+
+body.mobile_view {
+    padding: 0 !important;
+}
+
+body.nav {
+    padding-top: 161px;
+}

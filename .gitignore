@@ -1,2 +1,4 @@
 .vs/
 packages/
+ExpertFinder/ExpertFinder.Web/compilerconfig.json
+ExpertFinder/ExpertFinder.Web/compilerconfig.json.defaults

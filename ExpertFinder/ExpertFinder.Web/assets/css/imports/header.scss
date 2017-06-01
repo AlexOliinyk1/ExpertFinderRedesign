@@ -1,0 +1,363 @@
+﻿
+h2 {
+    padding: 10px 0px;
+    font-size: 22px;
+    float: left;
+    margin: 0;
+    background-color: $background-color;
+    width: 100%;
+    text-indent: 25%;
+    line-height: 30px;
+    z-index: 8;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    font-weight: 300;
+    color: #666;
+    border-bottom: 1px solid #EEE;
+    min-width: 900px;
+}
+
+.container.clearfix.wideTitle h2 {
+    text-indent: 20%;
+}
+
+.container.clearfix.wideBlock h2 {
+    background-color: #FFF;
+}
+
+h2.mobile_view {
+    text-indent: 2% !important;
+    position: initial;
+}
+
+
+/*Header*/
+
+#header, #logo, #appName, #navBar, #searchBar {
+    float: left;
+    height: 60px;
+}
+
+#header {
+    background-color: $main-color;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9;
+    min-width: 900px;
+}
+
+#header.mobile_view {
+    width: 100%;
+    min-width: 0px;
+    background-color: #FFF;
+    height: auto;
+    position: initial;
+}
+
+#logo {
+    background-color: $main-color;
+}
+
+#logo {
+
+    a {
+        float: left;
+    }
+
+    img {
+        height: 60px;
+        margin: 0px 3vw;
+        float: left;
+    }
+}
+
+#logo:hover {
+    cursor: pointer;
+}
+
+#header.mobile_view #logo {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#header.mobile_view #logo img {
+    float: none;
+}
+
+#appName {
+    @include transition(.2s);
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+#appName a {
+    color: #FFF;
+    font-size: 26px;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    font-weight: 300;
+}
+
+#appName:hover {
+    background-color: $link-color;
+}
+
+#header.mobile_view #appName {
+    width: 73%;
+    margin-left: 2%;
+}
+
+#header.mobile_view #appName a {
+    color: #333;
+    width: 100%;
+    padding: 0;
+}
+
+#header.mobile_view #appName:hover {
+    background-color: transparent;
+    color: #666;
+}
+
+#navBar, #userPic {
+    float: right;
+}
+
+#navBar {
+    .navIcon {
+        float: left;
+        width: 24px;
+        height: 24px;
+        margin: 18px 15px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
+    .navIcon:hover {
+        background-position: center bottom;
+        cursor: pointer;
+    }
+
+    .navIcon.disable {
+        opacity: 0.6;
+    }
+
+    .navIcon.active {
+        background-position: center bottom;
+        cursor: pointer;
+    }
+
+    .navIcon.navNotification {
+        background-image: url(../img/notification.png);
+    }
+
+    .navIcon.navMessage {
+        background-image: url(../img/message.png);
+    }
+
+    .navIcon.navRequest {
+        background-image: url(../img/request.png);
+    }
+
+    .navIcon.navMobile {
+        background-image: url(../img/menu.png);
+        width: 40px;
+        height: 40px;
+        margin: 10px 15px;
+        position: relative;
+    }
+}
+
+#navBar .navIcon.navMobile select.mobile, .profile_mobile select.mobile {
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+}
+
+.menuIcon.mobile_view {
+    background-image: url(../img/menu_filled.png);
+    width: 23%;
+    background-size: auto 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 60px;
+    float: left;
+    display: block;
+    position: relative;
+    margin: 10px 2% 20px 0%;
+}
+
+.menuIcon.mobile_view select {
+    opacity: 0;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+}
+
+#menu_panel {
+    width: 73%;
+    float: left;
+    height: 60px;
+    margin: 10px 0% 20px 2%;
+    position: relative;
+}
+
+#userPic {
+    width: 40px;
+    height: 40px;
+    margin: 10px 15px;
+    @include border-radius(50px);
+    @include box-sizing();
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#userPic img {
+    width: 100%;
+    float: left;
+    height: auto;
+}
+
+#userPic_cover {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#menu_panel {
+    #userPic {
+        width: 60px;
+        height: 60px;
+        margin: 0px 15px 0px 0px;
+        float: left;
+    }
+
+    div.mobileLabel {
+        width: auto;
+        color: #666;
+        font-size: 20px;
+        line-height: 60px;
+    }
+
+    .profile_mobile_menu {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+    }
+
+    .profile_mobile_menu select {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #CCC;
+        opacity: 0;
+    }
+}
+
+#searchBar {
+    padding: 14px 0px;
+    width: 25%;
+    height: 32px;
+    position: absolute;
+    left: 25vw;
+}
+
+#searchBar {
+    input[type=text] {
+        float: left;
+        width: 85%;
+        font-size: 14px;
+        margin: 0;
+        padding: 8px 10px;
+        @include box-sizing();
+        border: 0;
+        @include border-radius(3px 0px 0px 3px);
+        outline: none;
+        height: 32px;
+    }
+
+    button {
+        margin: 0;
+        background: $link-color url(../img/search.png) no-repeat center center;
+        background-size: 16px 16px;
+        width: 15%;
+        height: 32px;
+        float: left;
+        @include border-radius(0px 3px 3px 0px);
+        @include box-sizing();
+        border: 1px solid #FFF;
+        cursor: pointer;
+        @include transition(.2s);
+    }
+
+    button:hover {
+        background-color: $main-color;
+    }
+}
+
+#header a.link {
+    color: #FFF;
+    float: left;
+    margin: 15px 10px;
+}
+
+#searchPanel {
+    width: 96%;
+    padding: 0 2%;
+    float: left;
+    background-color: $main-color;
+}
+
+#searchPanel {
+    #searchBar {
+        width: 100%;
+        padding: 10px 0px;
+        height: 60px;
+        position: initial;
+        left: auto;
+    }
+
+    #searchBar {
+        input {
+            line-height: 40px;
+            font-size: 20px;
+            padding: 10px 10px;
+            height: 60px;
+        }
+
+        button {
+            height: 60px;
+            background-size: 40px 40px;
+        }
+    }
+
+    a.link {
+        font-size: 20px;
+        width: 100%;
+        margin: 0px 0px 10px;
+        text-align: left;
+    }
+}

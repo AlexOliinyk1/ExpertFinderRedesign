@@ -1,0 +1,231 @@
+﻿/* Auth menu */
+
+#authForm {
+    ul li {
+        padding: 10px 10px;
+        text-transform: none;
+    }
+
+    ul li:hover {
+        background-color: #FFF;
+    }
+
+    ul li {
+        input {
+            border: 1px solid #CCC;
+            width: 200px;
+            padding: 8px 6px;
+            color: #777;
+            margin: 6px 0 0;
+        }
+
+        button {
+            width: 214px;
+            text-align: center;
+            padding: 10px 0px;
+            background-color: $link-color;
+            color: #FFF;
+            text-transform: uppercase;
+            border: 0px;
+            @include border-radius(3px);
+            font-weight: 600;
+            @include transition(.2s);
+        }
+
+        button:hover {
+            background-color: $main-color;
+            cursor: pointer;
+        }
+    }
+
+    ul li.alerts {
+        display: none;
+    }
+
+    ul li.alerts div {
+        width: 214px;
+        @include box-sizing();
+        padding: 10px 6px;
+        font-size: 14px;
+        color: #C71E1E;
+        border: 1px solid #C71E1E;
+        @include border-radius(3px);
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+/* Auth page */
+
+body#auth_screen {
+    min-height: calc(100vh - 60px);
+    padding-top: 60px;
+    background: #F5F5F5 url(/img/network.png) no-repeat 13% 240px;
+    background-size: 40% auto;
+    font-family: 'Lato', sans-serif;
+}
+
+body#auth_screen * {
+    font-family: 'Lato', sans-serif;
+}
+
+body#auth_screen {
+    #scroll_container {
+        @include box-sizing();
+        padding: 50px 10%;
+        width: 100%;
+        position: relative;
+        min-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 36px;
+        color: #333;
+        width: 54%;
+        float: left;
+        margin: 0px 0px 20px;
+    }
+
+    p {
+        font-size: 24px;
+        color: #777;
+        width: 54%;
+        float: left;
+        margin: 0px 0px 20px;
+        font-weight: 300;
+    }
+
+    #authForm {
+        position: absolute;
+        left: 55%;
+        width: 400px;
+        @include box-sizing();
+        float: left;
+        background-color: #FFF;
+        box-shadow: 0px 0px 25px 1px rgba(0,0,0,.1);
+        -webkit-box-shadow: 0px 0px 25px 1px rgba(0,0,0,.1);
+        padding: 20px;
+        @include border-radius(6px);
+        top: 50px;
+    }
+
+    #authForm {
+        li.form_title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #000;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        li.form_desc {
+            text-align: center;
+            font-weight: 400;
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 40px;
+            padding: 0px;
+            letter-spacing: 1px;
+        }
+
+        li.form_cell {
+            color: #000;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        input {
+            padding: 10px 0px;
+            font-size: 14px;
+            border: 0px;
+            border-bottom: 1px solid #CCC;
+            width: 100%;
+            outline: none;
+            font-weight: 300;
+            color: #333;
+            letter-spacing: 0.5px;
+        }
+
+        input:focus {
+            border-color: $link-color;
+        }
+
+        button {
+            width: 200px;
+            padding: 14px 0px;
+            @include border-radius(30px);
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        li a {
+            font-weight: 300;
+            letter-spacing: 0.7px;
+        }
+
+        li.alerts div {
+            border: 0px;
+            padding: 10px 0px;
+            color: #C71E1E;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+            width: 100%;
+            word-spacing: 2px;
+            line-height: 16px;
+        }
+
+        #submit_auth.loading {
+            padding: 5px 0px;
+            background-color: $link-color;
+        }
+
+        #submit_auth.loading .circle-loader {
+            display: inline-block;
+        }
+
+        #submit_auth.loading span {
+            display: none;
+        }
+    }
+}
+
+body#auth_screen.mobile_view {
+    background-image: none;
+    padding: 60px 0px 20px !important;
+}
+
+body#auth_screen.mobile_view {
+    #scroll_container {
+        padding: 20px 3%;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 700;
+        width: 100%;
+    }
+
+    p {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    #authForm {
+        width: 100%;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 20px;
+    }
+}

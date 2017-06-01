@@ -4,9 +4,9 @@
     angular.module("expert")
         .config(config);
 
-    config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider'];
+    config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', '$httpProvider'];
 
-    function config($stateProvider, $locationProvider, $urlRouterProvider) {
+    function config($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider) {
 
         $stateProvider
             .state('root', {
@@ -24,31 +24,8 @@
         //    }
         //});
 
+        //$httpProvider.interceptors.push('AuthInterceptorService');
         //$locationProvider.html5Mode(true);
     }
 
-    angular.module("expert")
-        .run([
-        '$rootScope',
-        '$state',
-        '$location',
-        function ($rootScope, $state, $location) {
-
-            $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState) {
-                //console.log('state change start');
-
-                if (toState.redirectTo) {
-                    event.preventDefault();
-                    $state.go(toState.redirectTo);
-                }
-            });
-
-            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
-                //console.log('state changed');
-
-                $rootScope.previousState = fromState;
-                $rootScope.nextState = toState;
-            });
-        }
-    ]);
 })();

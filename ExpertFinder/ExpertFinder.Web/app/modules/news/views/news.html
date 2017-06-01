@@ -1,26 +1,28 @@
-﻿<div class="row">
-    <div class="col-md-12">
-        News
-    </div>
-</div>
+﻿<div id="content_block" ng-init="vm.loadNews()">
 
-<div class="row">
-    <div class="col-md-12" ng-repeat="person in vm.news">
-        <div class="row">
-            <div class="col-md-3">
-                <a href="/profile/{{person.id}}" ui-sref="profile.id({ profileId: person.id })" title="go to profile">
-                    {{person.name}}
-                </a>
+    <div class="nf_block" ng-repeat="news in vm.news">
+        <div class="user_img">
+            <a href="/profile/{{news.profile_id}}" ui-sref="profile.id({ profileId: news.profile_id })">
+                <img src="{{news.image_url}}" />
+            </a>
+        </div>
+        <div class="user_name_action">
+            <div class="user_name">
+                <a ui-sref="profile.id({ profileId: news.profile_id })"
+                   href="/profile/{{news.profile_id}}">{{news.firstname}} {{news.surname}}</a>
             </div>
-            <div class="col-md-3">
-                {{person.event}}
-            </div>
-            <div class="col-md-3">
-                {{person.eventDescription}}
-            </div>
-            <div class="col-md-3">
-                {{person.description}}
+            <div class="user_action">{{news.action}}</div>
+        </div>
+        <div class="date">{{news.date}}</div>
+        <div class="nf_text">
+            <div class="bold_name">{{news.title}}</div>
+            <p class="short_text">{{news.text}}</p>
+            <div class="nf_footer">
+                <!-- TODO: change this logic -->
+                <a ui-sref="profile.id({ profileId: news.profile_id })"
+                   href="{{news.link_url}}">{{news.link_text}}</a>
             </div>
         </div>
     </div>
+
 </div>

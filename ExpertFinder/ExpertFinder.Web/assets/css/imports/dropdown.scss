@@ -1,0 +1,247 @@
+﻿/* Drop Down Menu */
+
+#dropMenu, .dropDown {
+    position: fixed;
+    top: 60px;
+    right: 15px;
+    border: 1px solid #CCC;
+    box-shadow: 0px 4px 7px 1px #EEE;
+    -webkit-box-shadow: 0px 4px 7px 1px #EEE;
+    display: none;
+    background-color: #FFF;
+    z-index: 11;
+}
+
+#dropMenu ul, .dropDown ul, #authForm ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+#dropMenu ul li, .dropDown ul li, #authForm ul li {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #666;
+    padding-left: 40px;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+#dropMenu ul li:hover {
+    background-color: #EEE;
+}
+
+#dropMenu ul a, #authForm ul a {
+    text-decoration: none;
+}
+
+.profile_mobile {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.dropDown {
+    display: none;
+}
+
+#dropNotification ul li, #dropMessage ul li, #dropRequest ul li {
+    border-bottom: 1px solid #CCC;
+    padding-left: 15px;
+}
+
+#dropNotification ul a.link li, #dropMessage ul a.link li, #dropRequest ul a.link li {
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    color: $link-color;
+}
+
+#notificationUpdate, #messageUpdate, #requestUpdate {
+    width: 350px;
+    max-height: 185px;
+    overflow-y: auto;
+}
+
+#messageUpdate, #requestUpdate {
+    max-height: 250px;
+}
+
+li.notification {
+    width: 100%;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    padding: 10px 15px;
+    @include box-sizing();
+    text-transform: none;
+    min-height: 62px;
+}
+
+.shortList ul li.notification:last-child {
+    border: 0px !important;
+}
+
+.notification {
+    .user_img {
+        width: 12%;
+        overflow: hidden;
+        @include border-radius(50px);
+        position: absolute;
+        top: 10px;
+        left: 2%;
+    }
+
+    .user_img .user_cover_img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .user_img .user_cover_img img {
+        width: 100%;
+    }
+
+    .user_img:before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+
+    .not_text {
+        width: 74%;
+        font-size: 14px;
+        margin-right: 10%;
+        margin-left: 14%;
+        color: #333;
+        line-height: 21px;
+        text-transform: none;
+    }
+
+    .not_text span {
+        font-weight: 600;
+        text-transform: none;
+    }
+
+    .not_date {
+        top: 10px;
+        right: 2%;
+        position: absolute;
+        color: #666;
+        text-transform: none;
+    }
+}
+
+.notification .not_text .show_option, #show_desc {
+    color: $link-color;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#show_desc {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+}
+
+.notification .not_text .show_option:hover, #project_info #show_desc:hover {
+    text-decoration: underline;
+}
+
+.notification .not_text .appointment_date {
+    width: 100%;
+    padding: 6px 8px;
+    @include box-sizing();
+    color: #333;
+    text-transform: none;
+    background-color: #EEE;
+    margin: 5px 0px;
+    @include border-radius(3px);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.notification .not_text .skill, .full_block#skills .skill, .skill_set .skill, #projects_choosing_block ._project,
+.cv_set .cv_cell {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    background-color: #EEE;
+    padding: 6px;
+    margin: 5px 5px 0px 0px;
+    display: inline-block;
+    @include border-radius(3px);
+}
+
+.notification .not_text .skill .delete_skill, .full_block#skills .skill .delete_skill, .skill_set .skill .delete_skill, #projects_choosing_block ._project .add_proj,
+.cv_set .cv_cell .delete_cv_cell {
+    float: left;
+    width: 20px;
+    height: 100%;
+    background: #DDDDDD url(/img/delete.png) no-repeat center center;
+    background-size: 12px 12px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    cursor: pointer;
+    @include transition(.2s);
+    @include border-radius(3px 0px 0px 3px);
+}
+
+#profile_info .full_block#skills .skill .delete_skill {
+    right: 0px;
+    left: auto;
+    @include border-radius(0px 3px 3px 0px);
+}
+
+.notification .not_text .skill .delete_skill:hover, .full_block#skills .skill .delete_skill:hover, .skill_set .skill .delete_skill:hover, #projects_choosing_block ._project .add_proj:hover,
+.cv_set .cv_cell .delete_cv_cell:hover {
+    background-color: #CCC;
+}
+
+.notification .not_text .skill.removed, .full_block#skills .skill.removed, .skill_set .skill.removed, .cv_set .cv_cell.removed {
+    opacity: 0.5;
+}
+
+#projects_choosing_block ._project {
+    background-color: $link-color;
+    color: #FFF;
+    @include transition(.2s);
+}
+
+#projects_choosing_block ._project.removed {
+    background-color: #EEE;
+    color: #333;
+}
+
+.notification .not_text .skill.removed .delete_skill, .full_block#skills .skill.removed .delete_skill, .skill_set .skill.removed .delete_skill, #projects_choosing_block ._project.removed .add_proj,
+.cv_set .cv_cell.removed .delete_cv_cell {
+    background-image: url(/img/add.png);
+}
+
+.dropDown {
+    .list_loader {
+        width: 100%;
+        height: 20px;
+        background: url(/img/loader.gif) no-repeat center center;
+        background-size: auto 100%;
+        margin: 10px 0px;
+    }
+
+    .no_data {
+        width: 100%;
+        margin: 10px 0px;
+        color: #777;
+        font-size: 14px;
+        text-align: center;
+        text-transform: none;
+    }
+}

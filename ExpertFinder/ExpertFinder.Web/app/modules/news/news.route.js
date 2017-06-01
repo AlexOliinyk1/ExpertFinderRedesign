@@ -7,7 +7,6 @@
     ExpertNewsConfig.$inject = ['$stateProvider'];
 
     function ExpertNewsConfig($stateProvider) {
-
         $stateProvider
             .state({
                 name: 'news',

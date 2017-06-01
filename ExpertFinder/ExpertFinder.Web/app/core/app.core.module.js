@@ -3,6 +3,6 @@
 
     angular.module('expert.core', [
         'ui.router',
-        'expert.communications'
+        'LocalStorageModule'
     ]);
 })();
