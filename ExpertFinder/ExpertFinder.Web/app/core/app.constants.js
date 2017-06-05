@@ -4,6 +4,7 @@
         function appConsts() { }
         appConsts.appName = 'expert';
         appConsts.testUser = 12351;
+        appConsts.userIdReplace = '{user_id}';
 
         return appConsts;
     }());
@@ -13,7 +14,9 @@
 
         function appUrls () { }
         appUrls.getNews = baseUrl + 'news';
-        appUrls.getRequests = baseUrl + 'profiles/{user_id}/requests';//?offset=0&limit=20';
+        appUrls.getRequests = baseUrl + 'profiles/{user_id}/requests';//?offset=0&limit=20'
+        appUrls.getProfile = baseUrl + 'profiles/';//{user_id}
+        appUrls.getSimilarProfiles = baseUrl + 'profiles/{user_id}/similars';
 
         return appUrls;
     }());

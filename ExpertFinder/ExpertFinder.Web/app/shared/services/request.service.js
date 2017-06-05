@@ -14,7 +14,7 @@
         return service;
 
         function getRequests(userId) {
-            var url = global.url.getRequests.replace('{user_id}', userId);
+            var url = global.url.getRequests.replace(global.consts.userIdReplace, userId);
 
             return $http.get(url)
                 .then(function (result) {

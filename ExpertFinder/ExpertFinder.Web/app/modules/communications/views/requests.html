@@ -4,7 +4,7 @@
         <li class="notification" ng-repeat="obj in vm.requests">
             <div class="user_img">
                 <a href="/profile/{{obj.sender_id}}" class="user_cover_img">
-                    <img src="{{obj.sender_image_url}}" />
+                    <img ng-src="{{obj.sender_image_url}}" />
                 </a>
             </div>
 

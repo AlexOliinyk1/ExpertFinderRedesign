@@ -19,16 +19,16 @@
                 url: '/{profileId}',
                 controller: 'ProfileCtrl',
                 controllerAs: 'vm',
-                templateUrl: 'app/modules/profile/views/profile.html'
+                templateUrl: 'app/modules/profile/views/profile.html',
+                pageTitle: 'Profile'
             });
-        
-        //$stateProvider
-        //    .state({
-        //        name: 'myprofile',
-        //        url: '/my-profile',
-        //        controller: '',
-        //        controllerAs: 'vm',
-        //        templateUrl: 'app/modules//views/.html'
-        //    });
+           //.state({
+           //     name: 'myprofile',
+           //     url: '/my-profile',
+           //     controller: 'ProfileCtrl',
+           //     controllerAs: 'vm',
+           //     templateUrl: 'app/modules/profile/views/profile.html',
+           //     pageTitle: 'My Profile'
+           // });
     }
 })();

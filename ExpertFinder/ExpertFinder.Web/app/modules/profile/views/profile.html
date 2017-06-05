@@ -1,347 +1,156 @@
-﻿<link href="assets/css/temp/bootstrap.min.css" rel="stylesheet" />
-<link href="assets/css/temp/oneui.css" rel="stylesheet" />
-<link href="assets/css/temp/flat.css" rel="stylesheet" />
-<script src="assets/js/bootstrap.min.js"></script>
+﻿<div id="profile_info" ng-init="vm.init()">
+    <div class="list_loader live_loader" ng-show="vm.loading"></div>
 
-<div class="block">
-    <div class="bg-image" style="background-image: url('assets/img/photos/photo6@2x.jpg');">
-        <div class="block-content bg-primary-dark-op text-center overflow-hidden">
-            <div class="push-30-t push animated fadeInDown">
-                <img class="img-avatar img-avatar96 img-avatar-thumb" src="https://expertfinder-dev.smartransfer.de/user_images/ferguson.jpg" alt="">
+    <div id="right_user_cover" ng-hide="vm.loading">
+        <div class="block_cover">
+            <div class="user_img">
+                <div class="square_img">
+                    <img ng-src="{{vm.user.image_url}}" />
+                </div>
             </div>
-            <div class="push-30 animated fadeInUp">
-                <h2 class="h4 font-w600 text-white push-5">Sean Ferguson</h2>
-                <h3 class="h5 text-gray">Sean is a software engineer who has studied computer sciences at University of Seattle.</h3>
+            <h4 id="user_name">{{vm.user.firstname}} {{vm.user.surname}}</h4>
+            <p class="about">{{vm.user.text}}</p>
+
+            <div class='full_block _new' id='metrics'>
+                <div class='metric score_metric' style='background-image: url(assets/img//profile/score.png);'>
+                    <div class='num_metric'>{{vm.user.score}}<span>%</span></div>
+                    <div class='label_metric'>
+                        <div class='metric_img'>Score</div>
+                    </div>
+                </div>
+                <div class='metric projects_metric' style='background-image: url(assets/img/profile/projects.png);'>
+                    <div class='num_metric'>{{vm.user.projects.length}}</div>
+                    <div class='label_metric'>
+                        <div class='metric_img'>Projects</div>
+                    </div>
+                </div>
+                <div class='metric categories_metric' style='background-image: url(assets/img/profile/categories.png);'>
+                    <div class='num_metric'>{{vm.userTags.length}}</div>
+                    <div class='label_metric'>
+                        <div class='metric_img'>Categories</div>
+                    </div>
+                </div>
+                <div class='metric skills_metric' style='background-image: url(assets/img/profile/skills.png);'>
+                    <div class='num_metric'>{{vm.user.skills.length}}</div>
+                    <div class='label_metric'>
+                        <div class='metric_img'>Skills</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block_cover profile_data" style="position: relative; height: 456px;">
+            <!-- Tabs -->
+            <div class="tabs col_3">
+                <div class="tab active" attr-ref="skills">
+                    <div class="tab_skills">Skills</div>
+                </div>
+                <div class="tab" attr-ref="projects">
+                    <div class="tab_projects">Projects</div>
+                </div>
+                <div class="tab" attr-ref="cv">
+                    <div class="tab_cv">CV</div>
+                </div>
+            </div>
+            <!-- END Tabs -->
+
+            <!-- TODO: make this content as another views -->
+
+            <!--<div class="full_block _new active" id="skills">
+                <div id="add_skills_block"><div id="add_skills_cover" skill_input_length>  edit_skills  </div>  add_new_skills  </div>  sorted_skills
+            </div>-->
+            <!--_PF_.projects(vm.user.projects, add_project)  _PF_.cv(vm.user.education, vm.user.jobs, vm.user.certificates, vm.user.goals)-->
+        </div>
+        <!--_PF_.files(vm.user.files)-->
+        <div id="bottom_user_cover">
+            <div class="list_loader" ng-show="vm.loadingSimilar"></div>
+
+            <h5>Similar profiles</h5>
+            <div class="recommend_row active">
+
+                <div class="recommend_item" ng-repeat="similar in vm.similarProfiles.slice(0,5)">
+                    <div class="proj_user_block">
+                        <a href="/profile/{{similar._id}}" class="user_img">
+                            <div class="square_img">
+                                <img ng-src="{{similar.image_url}}" />
+                            </div>
+                        </a>
+                        <div style="width: 100%; text-align: center; line-height: 20px; height: 40px; overflow: hidden;">
+                            <a href="/profile/{{similar._id}}" class="proj_name_link">{{similar.firstname}} {{similar.surname}}</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="recommend_row">
+                <div class="recommend_item" ng-repeat="similar in vm.similarProfiles.slice(5,10)">
+                    <div class="proj_user_block">
+                        <a href="/profile/{{similar._id}}" class="user_img">
+                            <div class="square_img">
+                                <img ng-src="{{similar.image_url}}" />
+                            </div>
+                        </a>
+                        <div style="width: 100%; text-align: center; line-height: 20px; height: 40px; overflow: hidden;">
+                            <a href="/profile/{{similar._id}}" class="proj_name_link">{{similar.firstname}} {{similar.surname}}</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="block-content">
-        <div class="row items-push text-center">
-            <div class="col-xs-6 col-sm-3">
-                <div class="push-5"><i class="si si-star fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">63% SCORE</div>
+    <div id="left_user_cover" ng-hide="vm.loading">
+        <div class="full_block">
+            <!-- TODO: hide message btn if my profile -->
+            <div class="full_block" id="messages">
+                <button id="create_message" value="{{vm.user._id}}">Compose message</button>
             </div>
-            <div class="col-xs-6 col-sm-3">
-                <div class="push-5"><i class="si si-briefcase fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">2 PROJECTS</div>
-            </div>
-            <div class="col-xs-6 col-sm-3">
-                <div class="push-5"><i class="si si-list fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">1 CATEGORIES</div>
-            </div>
-            <div class="col-xs-6 col-sm-3">
-                <div class="push-5"><i class="si si-graduation fa-2x"></i></div>
-                <div class="h5 font-w300 text-muted">1 SKILLS</div>
+            <div id='all_tags'>
+                <h6>Tags</h6>
+                <div class='tag_user' ng-repeat="(key, value) in vm.user.tags">
+                    <small>{{key}}</small>{{value}}
+                </div>
             </div>
         </div>
+        <div class="full_block" id="contacts">
+            <h6>Contacts</h6>
+            <div class='contact_field'>
+                <small>Phone</small>
+                <a href='tel:{{user.contact_data.phone}}'>{{vm.user.contact_data.phone}}</a>
+            </div>
+            <div class='contact_field'>
+                <small>Email</small>
+                <a href='mailto:{{vm.user.contact_data.email}}'>{{vm.user.contact_data.email}}</a>
+            </div>
+            <div class='contact_field'>
+                <small>Location</small>
+                <span id='goto_address'>{{vm.user.contact_data.address}}</span>
+            </div>
+            <div class='contact_field hidden'>
+                <small>Mobile</small>
+                <a href='tel:{{vm.user.contact_data.mobile}}'>{{vm.user.contact_data.mobile}}</a>
+            </div>
+            <div class='contact_field hidden'>
+                <small>Skype</small>
+                <a href='skype:{{vm.user.contact_data.skype}}'>{{vm.user.contact_data.skype}}</a>
+            </div>
+            <div class='contact_field show_more'>
+                <span>ShowMore </span>
+            </div>
+        </div>
+        <div id='all_langs'>
+            <h6>Languages</h6>
+            <div class='lang_user' ng-repeat="val in vm.user.languages">
+                <small>"Native"</small>{{val['name_en']}}
+            </div>
+            <div class='lang_user'>
+                <small>"Advanced"</small> German
+            </div>
+        </div>
+
     </div>
+
 </div>
-
-<div class="row">
-
-    <div class="col-sm-5 col-lg-4">
-
-        <div class="block block-opt-refresh-icon6">
-            <div class="block-header">
-                <ul class="block-options">
-                    <li>
-                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                    </li>
-                </ul>
-                <h3 class="block-title"><i class="fa fa-fw fa-share-alt"></i> Tags</h3>
-            </div>
-            <div class="block-content">
-                <!-- TODO : update design here ************************************************************************** -->
-                <ul>
-                    <li>
-                        <small>Experience</small>&gt; 1 years
-                    </li>
-                    <li>
-                        <small>Department</small>Computer Sciences
-                    </li>
-                    <li>
-                        <small>Role Profile</small>Designer
-                    </li>
-                </ul>
-                <!-- END TODO : update design here ************************************************************************** -->
-            </div>
-        </div>
-
-        <div class="block block-opt-refresh-icon6">
-            <div class="block-header">
-                <ul class="block-options">
-                    <li>
-                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                    </li>
-                </ul>
-                <h3 class="block-title"><i class="fa fa-fw fa-briefcase"></i> Contacts</h3>
-            </div>
-            <div class="block-content">
-                <!-- TODO : update design here ************************************************************************** -->
-                <ul>
-                    <li>
-                        <small>Phone</small><a href="tel:0345 678 991">0345 678 991</a>
-                    </li>
-                    <li>
-                        <small>Email</small><a href="mailto:ina.tomson@smartransfer.de">ina.tomson@smartransfer.de</a>
-                    </li>
-                    <li>
-                        <small>Location</small><span id="goto_address">Johnson Av. 4, 2493 New Jersey</span>
-                    </li>
-                    <li>
-                        <small>Mobile</small><a href="tel:0176 1993782563">0176 1993782563</a>
-                    </li>
-                    <li>
-                        <small>Skype</small><a href="skype:Ina.Tomson">Ina.Tomson</a>
-                    </li>
-                    
-                    <li>
-                        <a href="do_something">Show more</a>
-                    </li>
-                </ul>
-                <!-- END TODO : update design here ************************************************************************** -->
-            </div>
-        </div>
-
-        <div class="block block-opt-refresh-icon6">
-            <div class="block-header">
-                <ul class="block-options">
-                    <li>
-                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                    </li>
-                </ul>
-                <h3 class="block-title"><i class="fa fa-fw fa-star"></i> Languages</h3>
-            </div>
-            <div class="block-content">
-                <!-- TODO : update design here ************************************************************************** -->
-                <ul>
-                    <li>
-                        <small>Native</small> English
-                    </li>
-                </ul>
-                <!-- END TODO : update design here ************************************************************************** -->
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col-sm-7 col-lg-8 ">
-        <div class="block">
-            <ul class="nav nav-tabs nav-justified push-20" data-toggle="tabs">
-                <li class="">
-                    <a show-tab href="#tab-profile-personal"><i class="fa fa-fw fa-pencil"></i> Personal</a>
-                </li>
-                <li class="">
-                    <a show-tab href="#tab-profile-password"><i class="fa fa-fw fa-asterisk"></i> Password</a>
-                </li>
-                <li class="active">
-                    <a show-tab href="#tab-profile-privacy"><i class="fa fa-fw fa-lock"></i> Privacy</a>
-                </li>
-            </ul>
-            <div class="block-content tab-content">
-                <!-- Personal Tab -->
-                <div class="tab-pane fade" id="tab-profile-personal">
-                    <div class="row items-push">
-                        <div class="col-sm-6 col-sm-offset-3 form-horizontal">
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label>Username</label>
-                                    <div class="form-control-static font-w700">Admin</div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <label for="profile-email">Email Address</label>
-                                    <input class="form-control input-lg" type="email" id="profile-email" name="profile-email" placeholder="Enter your email.." value="admin@example.com">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label for="profile-firstname">Firstname</label>
-                                    <input class="form-control input-lg" type="text" id="profile-firstname" name="profile-firstname" placeholder="Enter your firstname.." value="John">
-                                </div>
-                                <div class="col-xs-6">
-                                    <label for="profile-lastname">Lastname</label>
-                                    <input class="form-control input-lg" type="text" id="profile-lastname" name="profile-lastname" placeholder="Enter your lastname.." value="Doe">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <label for="profile-bio">Bio</label>
-                                    <textarea class="form-control input-lg" id="profile-bio" name="profile-bio" rows="15" placeholder="Enter a few details about yourself..">Hi there, welcome to my profile! I'm a web designer and I love creating stuff that solve problems and make your life easier. Feel free to follow me to know more about me and my projects. Thanks for stopping by, wish you a great day!</textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <label for="profile-skills">Skills</label>
-                                    <select class="form-control" id="profile-skills" name="profile-skills" size="8" multiple="">
-                                        <option value="1" selected="">HTML</option>
-                                        <option value="2" selected="">CSS</option>
-                                        <option value="3" selected="">JavaScript</option>
-                                        <option value="4">PHP</option>
-                                        <option value="5">Ruby</option>
-                                        <option value="6" selected="">Photoshop</option>
-                                        <option value="6" selected="">Sketch</option>
-                                        <option value="7">Illustrator</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-6">
-                                    <label for="profile-city">Where do you live?</label>
-                                    <input class="form-control input-lg" type="text" id="profile-city" name="profile-city" placeholder="Enter your location..">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="profile-age">Age</label>
-                                    <input class="form-control input-lg" type="text" id="profile-age" name="profile-age" placeholder="Enter your age..">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-xs-12">Gender</label>
-                                <div class="col-xs-12">
-                                    <label class="css-input css-radio css-radio-primary push-10-r">
-                                        <input type="radio" name="profile-gender-group"><span></span> Female
-                                    </label>
-                                    <label class="css-input css-radio css-radio-primary">
-                                        <input type="radio" name="profile-gender-group" checked=""><span></span> Male
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Personal Tab -->
-                <!-- Password Tab -->
-                <div class="tab-pane fade" id="tab-profile-password">
-                    <div class="row items-push">
-                        <div class="col-sm-6 col-sm-offset-3 form-horizontal">
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <label for="profile-password">Current Password</label>
-                                    <input class="form-control input-lg" type="password" id="profile-password" name="profile-password">
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <label for="profile-password-new">New Password</label>
-                                    <input class="form-control input-lg" type="password" id="profile-password-new" name="profile-password-new">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <label for="profile-password-new-confirm">Confirm New Password</label>
-                                    <input class="form-control input-lg" type="password" id="profile-password-new-confirm" name="profile-password-new-confirm">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Password Tab -->
-                <!-- Privacy Tab -->
-                <div class="tab-pane fade active in" id="tab-profile-privacy">
-                    <div class="row items-push">
-                        <div class="col-sm-6 col-sm-offset-3 form-horizontal">
-                            <div class="form-group">
-                                <div class="col-xs-8">
-                                    <div class="font-s13 font-w600">Online Status</div>
-                                    <div class="font-s13 font-w400 text-muted">Show your status to all</div>
-                                </div>
-                                <div class="col-xs-4 text-right">
-                                    <label class="css-input switch switch-sm switch-primary push-10-t">
-                                        <input type="checkbox"><span></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="col-xs-8">
-                                    <div class="font-s13 font-w600">Auto Updates</div>
-                                    <div class="font-s13 font-w400 text-muted">Keep up to date</div>
-                                </div>
-                                <div class="col-xs-4 text-right">
-                                    <label class="css-input switch switch-sm switch-primary push-10-t">
-                                        <input type="checkbox"><span></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="col-xs-8">
-                                    <div class="font-s13 font-w600">Notifications</div>
-                                    <div class="font-s13 font-w400 text-muted">Do you need them?</div>
-                                </div>
-                                <div class="col-xs-4 text-right">
-                                    <label class="css-input switch switch-sm switch-primary push-10-t">
-                                        <input type="checkbox" checked=""><span></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <div class="col-sm-8">
-                                    <div class="font-s13 font-w600">API Access</div>
-                                    <div class="font-s13 font-w400 text-muted">Enable/Disable access</div>
-                                </div>
-                                <div class="col-sm-4 text-right">
-                                    <label class="css-input switch switch-sm switch-primary push-10-t">
-                                        <input type="checkbox" checked=""><span></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END Privacy Tab -->
-            </div>
-
-        </div>
-
-
-        <div class="block block-opt-refresh-icon6">
-            <div class="block-header">
-                <ul class="block-options">
-                    <li>
-                        <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"></button>
-                    </li>
-                    <li>
-                        <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
-                    </li>
-                </ul>
-                <h3 class="block-title"><i class="fa fa-newspaper-o"></i> Similar profiles</h3>
-            </div>
-            <div class="block-content text-center">
-                <div class="row items-push text-uppercase">
-                    <div class="col-xs-6 col-sm-3">
-                        <div>
-                            <img class="img-avatar img-avatar96" src="assets/img/avatars/avatar7.jpg" alt="">
-                        </div>
-                        <div class="h5 push-15-t push-5">Julia Cole</div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div>
-                            <img class="img-avatar img-avatar96" src="assets/img/avatars/avatar7.jpg" alt="">
-                        </div>
-                        <div class="h5 push-15-t push-5">Julia Cole</div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div>
-                            <img class="img-avatar img-avatar96" src="assets/img/avatars/avatar7.jpg" alt="">
-                        </div>
-                        <div class="h5 push-15-t push-5">Julia Cole</div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <div>
-                            <img class="img-avatar img-avatar96" src="assets/img/avatars/avatar7.jpg" alt="">
-                        </div>
-                        <div class="h5 push-15-t push-5">Julia Cole</div>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
-</div>
+<input type="file" name="skill_file" id="skills_uploading" style="display: none;" />
+<input type="file" name="cv_file" id="cv_uploading" style="display: none;" />
