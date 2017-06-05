@@ -16,7 +16,8 @@
 
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
             $rootScope.previousState = fromState;
-            $rootScope.nextState = toState;
+            $rootScope.currentState = toState;
+            $rootScope.$title = toState.pageTitle || 'Expert Finder';
         });
     }
 })();

@@ -7,7 +7,7 @@
     border: 1px solid #CCC;
     box-shadow: 0px 4px 7px 1px #EEE;
     -webkit-box-shadow: 0px 4px 7px 1px #EEE;
-    display: none;
+    /*display: none;*/
     background-color: #FFF;
     z-index: 11;
 }
@@ -47,20 +47,23 @@
     z-index: 12;
 }
 
-.dropDown {
-    display: none;
-}
-
 #dropNotification ul li, #dropMessage ul li, #dropRequest ul li {
     border-bottom: 1px solid #CCC;
     padding-left: 15px;
 }
 
-#dropNotification ul a.link li, #dropMessage ul a.link li, #dropRequest ul a.link li {
+#dropNotification ul li.footer,
+#dropMessage ul li.footer,
+#dropRequest ul li.footer {
+    border: 0;
     text-align: center;
-    font-weight: 600;
-    font-size: 12px;
-    color: $link-color;
+
+    a.link {
+        float: none;
+        font-weight: 600;
+        font-size: 12px;
+        color: $link-color;
+    }
 }
 
 #notificationUpdate, #messageUpdate, #requestUpdate {
@@ -186,7 +189,7 @@ li.notification {
     float: left;
     width: 20px;
     height: 100%;
-    background: #DDDDDD url(/img/delete.png) no-repeat center center;
+    background: #DDDDDD url(../img/delete.png) no-repeat center center;
     background-size: 12px 12px;
     position: absolute;
     top: 0;
@@ -231,7 +234,7 @@ li.notification {
     .list_loader {
         width: 100%;
         height: 20px;
-        background: url(/img/loader.gif) no-repeat center center;
+        background: url(../img/loader.gif) no-repeat center center;
         background-size: auto 100%;
         margin: 10px 0px;
     }
@@ -244,4 +247,5 @@ li.notification {
         text-align: center;
         text-transform: none;
     }
+
 }

@@ -2,7 +2,7 @@
 @import 'imports/global.scss';
 @import 'imports/header.scss';
 @import 'imports/dropdown.scss';
-/*@import 'imports/auth.scss';*/
+@import 'imports/auth.scss';
 
 h3 {
     padding: 10px 0px;
@@ -81,11 +81,11 @@ a:hover {
 }
 
 .acceptMini {
-    background-image: url(/img/complete.png);
+    background-image: url(../img/complete.png);
 }
 
 .denyMini {
-    background-image: url(/img/deny.png);
+    background-image: url(../img/deny.png);
 }
 
 /* CSS Loader */
@@ -212,7 +212,9 @@ $check-color: $brand-success;
     min-height: calc(100vh - 111px);
 }
 
-#middle_container.mobile_view, .container.clearfix.wideTitle #middle_container.mobile_view, .container.clearfix.wideBlock #middle_container.mobile_view {
+#middle_container.mobile_view, 
+.container.clearfix.wideTitle #middle_container.mobile_view,
+.container.clearfix.wideBlock #middle_container.mobile_view {
     width: 96% !important;
     margin: 0 2% !important;
 }
@@ -227,7 +229,13 @@ $check-color: $brand-success;
 
 /* News Feed */
 
-#content_block, #content_block .nf_block, #notifications_block, #messages_block, #requests_block, #search_block, #nugget_container {
+#content_block, 
+#content_block .nf_block, 
+#notifications_block, 
+#messages_block, 
+#requests_block, 
+#search_block,
+#nugget_container {
     width: 100%;
     float: left;
     padding: 10px 0px;
@@ -353,19 +361,28 @@ $check-color: $brand-success;
     }
 }
 
-#content_block .list_loader, #notifications_block .list_loader, #messages_block .list_loader, #requests_block .list_loader, #search_block .list_loader,
-#profile_info .list_loader, #project_info .list_loader, #projects_choosing_block .list_loader, #admin_info .list_loader, #bottom_user_cover .list_loader,
-#nugget_container .list_loader, #list_of_suggested_nuggets .list_loader {
+#content_block .list_loader, 
+#notifications_block .list_loader, 
+#messages_block .list_loader, 
+#requests_block .list_loader, 
+#search_block .list_loader,
+#profile_info .list_loader, 
+#project_info .list_loader, 
+#projects_choosing_block .list_loader, 
+#admin_info .list_loader, 
+#bottom_user_cover .list_loader,
+#nugget_container .list_loader, 
+#list_of_suggested_nuggets .list_loader {
     width: 100%;
     height: 20px;
-    background: url(/img/loader.gif) no-repeat center center;
+    background: url(../img/loader.gif) no-repeat center center;
     background-size: auto 100%;
     float: left;
     margin: 10px 0px;
 }
 
 #profile_info .list_loader.live_loader {
-    background: url(/img/profile/loading_view.png) no-repeat calc((100% - 255px) / 2) top;
+    background: url(../img/profile/loading_view.png) no-repeat calc((100% - 255px) / 2) top;
     margin: 0px 0px 27px;
     background-size: auto auto;
     height: 300px;
@@ -375,7 +392,7 @@ $check-color: $brand-success;
 }
 
 #profile_info.mobile_view .list_loader.live_loader {
-    background-image: url(/img/profile/loading_view_mobile.png);
+    background-image: url(../img/profile/loading_view_mobile.png);
     background-size: 96% auto;
     background-position: center top;
 }
@@ -526,11 +543,11 @@ $check-color: $brand-success;
 }
 
 #messages_block ul li .not_text .favorite.add {
-    background-image: url(/img/mark_as_favorite.png);
+    background-image: url(../img/mark_as_favorite.png);
 }
 
 #messages_block ul li .not_text .favorite.remove {
-    background-image: url(/img/marked_favorite.png);
+    background-image: url(../img/marked_favorite.png);
 }
 
 #msg_manage_block {
@@ -566,15 +583,15 @@ $check-color: $brand-success;
     }
 
     .msg_type.inbox {
-        background-image: url(/img/inbox.png);
+        background-image: url(../img/inbox.png);
     }
 
     .msg_type.sent {
-        background-image: url(/img/sent.png);
+        background-image: url(../img/sent.png);
     }
 
     .msg_type.favorites {
-        background-image: url(/img/favorite.png);
+        background-image: url(../img/favorite.png);
     }
 }
 
@@ -600,7 +617,7 @@ $check-color: $brand-success;
     @include border-radius(50px);
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(/img/create_new.png);
+    background-image: url(../img/create_new.png);
     background-size: 20px 20px;
     background-color: $link-color;
     position: fixed;
@@ -683,7 +700,7 @@ $check-color: $brand-success;
             color: #333;
             font-size: 14px;
             font-weight: 600;
-            background: url(/img/checkbox.png) no-repeat left top;
+            background: url(../img/checkbox.png) no-repeat left top;
             background-size: 26px auto;
             @include box-sizing();
             max-height: 26px;
@@ -1110,7 +1127,7 @@ h4#user_name {
 #profile_info .full_block#messages button, button#invite_members, #admin_info .full_block#ad_projects button#create_project {
     text-align: center;
     padding: 10px 0px;
-    background: $link-color url(/img/create_new.png) no-repeat 22% center;
+    background: $link-color url(../img/create_new.png) no-repeat 22% center;
     background-size: 20px 20px;
     color: #FFF;
     border: 0px;
@@ -1206,15 +1223,15 @@ button#invite_members {
 }
 
 .tab div.tab_skills {
-    background-image: url(/img/profile/skills_gray.png);
+    background-image: url(../img/profile/skills_gray.png);
 }
 
 .tab div.tab_projects {
-    background-image: url(/img/profile/projects_gray.png);
+    background-image: url(../img/profile/projects_gray.png);
 }
 
 .tab div.tab_cv {
-    background-image: url(/img/profile/cv.png);
+    background-image: url(../img/profile/cv.png);
 }
 
 .tabs.col_3 .tab {
@@ -1293,7 +1310,7 @@ button#invite_members {
         height: calc(100% - 74px);
         top: 74px;
         left: 0px;
-        background: rgba(255,255,255,.8) url(/img/loader.gif) no-repeat center center;
+        background: rgba(255,255,255,.8) url(../img/loader.gif) no-repeat center center;
         background-size: 20px 20px;
         z-index: 10;
         display: none;
@@ -1362,7 +1379,7 @@ button#invite_members {
         float: left;
         width: 20px;
         height: 100%;
-        background: $link-color url(/img/edit.png) no-repeat center center;
+        background: $link-color url(../img/edit.png) no-repeat center center;
         background-size: 12px 12px;
         cursor: pointer;
         @include transition(.2s);
@@ -1553,7 +1570,7 @@ button#invite_members {
         font-weight: 600;
         font-size: 16px;
         text-align: center;
-        background: url(/img/quill_with_ink.png) no-repeat center 20px;
+        background: url(../img/quill_with_ink.png) no-repeat center 20px;
         background-size: 60px 60px;
         width: 100%;
         color: #333;
@@ -1690,7 +1707,7 @@ button#invite_members {
     text-align: center;
     color: #666;
     @include transition(.2s);
-    background: url(/img/upload_to_cloud.png) no-repeat center left;
+    background: url(../img/upload_to_cloud.png) no-repeat center left;
     background-size: 32px 32px;
     position: absolute;
     top: 18px;
@@ -1726,7 +1743,7 @@ button#invite_members {
 
 #profile_info .full_block#skills #upload_skills.loading {
     height: 20px;
-    background-image: url(/img/loader.gif);
+    background-image: url(../img/loader.gif);
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 20px 20px;
@@ -1809,7 +1826,7 @@ button#invite_members {
         position: absolute;
         top: 0px;
         right: 0px;
-        background: $link-color url(/img/delete_white.png) no-repeat center center;
+        background: $link-color url(../img/delete_white.png) no-repeat center center;
         background-size: 20px 20px;
         cursor: pointer;
         z-index: 5;
@@ -1908,7 +1925,7 @@ button#invite_members {
             text-align: center;
             color: #666;
             @include transition(.2s);
-            background: url(/img/upload_to_cloud.png) no-repeat center left;
+            background: url(../img/upload_to_cloud.png) no-repeat center left;
             background-size: 32px 32px;
             position: absolute;
             top: 18px;
@@ -1925,7 +1942,7 @@ button#invite_members {
 
         #upload_cv.loading {
             height: 20px;
-            background-image: url(/img/loader.gif);
+            background-image: url(../img/loader.gif);
             background-repeat: no-repeat;
             background-position: left center;
             background-size: 20px 20px;
@@ -1943,19 +1960,19 @@ button#invite_members {
     }
 
     .cv_elem.cv_education {
-        background-image: url(/img/profile/university.png);
+        background-image: url(../img/profile/university.png);
     }
 
     .cv_elem.cv_jobs {
-        background-image: url(/img/profile/jobs.png);
+        background-image: url(../img/profile/jobs.png);
     }
 
     .cv_elem.cv_certificates {
-        background-image: url(/img/profile/certificates.png);
+        background-image: url(../img/profile/certificates.png);
     }
 
     .cv_elem.cv_goals {
-        background-image: url(/img/profile/goals.png);
+        background-image: url(../img/profile/goals.png);
     }
 
     .cv_elem {
@@ -2008,7 +2025,7 @@ button#invite_members {
     @include box-sizing();
     text-align: center;
     margin-bottom: 5px;
-    background: url(/img/green_doc.png) no-repeat left 4px;
+    background: url(../img/green_doc.png) no-repeat left 4px;
     background-size: 18px 18px;
     padding: 5px 0px 10px 24px;
     position: relative;
@@ -2021,7 +2038,7 @@ button#invite_members {
     top: 24px;
     right: 3%;
     padding-right: 30px;
-    background: url(/img/slide_arrow.png) no-repeat right -2px;
+    background: url(../img/slide_arrow.png) no-repeat right -2px;
     background-size: 24px auto;
     color: #000;
     opacity: 0.5;
@@ -2038,7 +2055,7 @@ button#invite_members {
 }
 
 #profile_info .full_block#files .file_set {
-    background: url(/img/green_doc.png) no-repeat left center;
+    background: url(../img/green_doc.png) no-repeat left center;
     background-size: 30px 30px;
     padding: 20px 0px 20px 40px;
     position: relative;
@@ -2053,7 +2070,7 @@ button#invite_members {
     width: 20px;
     height: 100%;
     ;
-    background: url(/img/delete_sign.png) no-repeat center center;
+    background: url(../img/delete_sign.png) no-repeat center center;
     background-size: 20px 20px;
     top: 0px;
     right: 0px;
@@ -2093,7 +2110,7 @@ button#invite_members {
     color: $link-color;
     font-weight: 300;
     text-transform: uppercase;
-    background: url(/img/download_from_cloud_gray.png) no-repeat 10px center;
+    background: url(../img/download_from_cloud_gray.png) no-repeat 10px center;
     background-size: 14px 14px;
     border: 1px solid $link-color;
     @include border-radius(3px);
@@ -2112,7 +2129,7 @@ button#invite_members {
     width: 20px;
     height: 100%;
     ;
-    background: url(/img/download_from_cloud.png) no-repeat center center;
+    background: url(../img/download_from_cloud.png) no-repeat center center;
     background-size: 20px 20px;
     top: 0px;
     right: 40px;
@@ -2306,7 +2323,7 @@ button#invite_members {
 
 .recommend_arr.prev_arr {
     left: 0%;
-    background-image: url(/img/left_arrow.png);
+    background-image: url(../img/left_arrow.png);
     @include border-radius(0px 6px 6px 0px);
     border-left: 0px;
 }
@@ -2317,7 +2334,7 @@ button#invite_members {
 
 .recommend_arr.next_arr {
     right: 0%;
-    background-image: url(/img/right_arrow.png);
+    background-image: url(../img/right_arrow.png);
     @include border-radius(6px 0px 0px 6px);
     border-right: 0px;
 }
@@ -2405,7 +2422,7 @@ button#invite_members {
     font-size: 20px;
     color: #333;
     margin-bottom: 10px;
-    background: url(/img/checkbox.png) no-repeat -5px top;
+    background: url(../img/checkbox.png) no-repeat -5px top;
     background-size: 30px auto;
     @include box-sizing();
     padding: 0px 30px;
@@ -2429,7 +2446,7 @@ button#invite_members {
     height: 20px;
     top: 15px;
     right: 5px;
-    background: url(/img/slide_arrow.png) no-repeat center top;
+    background: url(../img/slide_arrow.png) no-repeat center top;
     background-size: 20px auto;
     cursor: pointer;
     opacity: 0.6;
@@ -2452,7 +2469,7 @@ button#invite_members {
     width: 100%;
     font-size: 14px;
     color: #333;
-    background: url(/img/checkbox.png) no-repeat left top;
+    background: url(../img/checkbox.png) no-repeat left top;
     background-size: 24px auto;
     @include box-sizing();
     padding: 3px 0px 2px 30px;
@@ -2537,7 +2554,7 @@ button#invite_members {
     text-decoration: none;
     background-color: transparent;
     @include transition(.2s);
-    background: url(/img/admin/refresh.png) no-repeat center center;
+    background: url(../img/admin/refresh.png) no-repeat center center;
     background-size: 100% 100%;
 }
 
@@ -2585,19 +2602,19 @@ button#invite_members {
 
 #admin_info .ad_elem .ad_elem_control.ad_info {
     right: 102px;
-    background: url(/img/admin/info.png) no-repeat center center;
+    background: url(../img/admin/info.png) no-repeat center center;
     background-size: 100% 100%;
 }
 
 #admin_info .ad_elem .ad_elem_control.ad_edit {
     right: 58px;
-    background: url(/img/admin/edit.png) no-repeat center center;
+    background: url(../img/admin/edit.png) no-repeat center center;
     background-size: 100% 100%;
 }
 
 #admin_info .ad_elem .ad_elem_control.ad_delete {
     right: 14px;
-    background: url(/img/admin/delete.png) no-repeat center center;
+    background: url(../img/admin/delete.png) no-repeat center center;
     background-size: 100% 100%;
 }
 
@@ -2658,7 +2675,7 @@ button#invite_members {
             right: 0px;
             width: 45px;
             height: 45px;
-            background: #EEE url(/img/attach.png) no-repeat center center;
+            background: #EEE url(../img/attach.png) no-repeat center center;
             background-size: 70% 70%;
             @include transition(.2s);
             border: 0px;
@@ -2672,7 +2689,7 @@ button#invite_members {
         }
 
         #attach_file.loading {
-            background-image: url(/img/loader.gif);
+            background-image: url(../img/loader.gif);
             background-size: 40% 40%;
             cursor: default;
         }
@@ -2719,7 +2736,7 @@ button#invite_members {
                 float: left;
                 width: 20px;
                 height: 100%;
-                background: #DDDDDD url(/img/delete.png) no-repeat center center;
+                background: #DDDDDD url(../img/delete.png) no-repeat center center;
                 background-size: 12px 12px;
                 position: absolute;
                 top: 0;
@@ -2737,7 +2754,7 @@ button#invite_members {
             }
 
             .tag.removed .delete_tag {
-                background-image: url(/img/add.png);
+                background-image: url(../img/add.png);
             }
         }
     }
@@ -3235,7 +3252,7 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
     position: absolute;
     top: 10px;
     right: 10px;
-    background: url(/img/delete.png) no-repeat center center;
+    background: url(../img/delete.png) no-repeat center center;
     background-size: 80% 80%;
     cursor: pointer;
     @include transition(.2s);
@@ -3359,7 +3376,7 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
     position: absolute;
     top: 23px;
     right: 0px;
-    background: url(/img/remove_or_return.png) no-repeat center 7px;
+    background: url(../img/remove_or_return.png) no-repeat center 7px;
     background-size: 21px auto;
     border: 0px;
     outline: none;
@@ -3384,7 +3401,7 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
 .standart_box .message_field button.expand_list {
     width: 40px;
     height: 35px;
-    background: url(/img/slide_arrow.png) no-repeat center -42px;
+    background: url(../img/slide_arrow.png) no-repeat center -42px;
     background-size: 24px auto;
     position: absolute;
     bottom: 0;
@@ -3439,7 +3456,7 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
 }
 
 .standart_box .message_field button#upload_file.loading {
-    background: $background-color url(/img/loader.gif) no-repeat center center;
+    background: $background-color url(../img/loader.gif) no-repeat center center;
     background-size: 18px 18px;
     height: 36px;
     cursor: default;
@@ -3452,7 +3469,7 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
     float: left;
     @include box-sizing();
     padding: 5px 20px 5px 30px;
-    background: url(/img/document.png) no-repeat left center;
+    background: url(../img/document.png) no-repeat left center;
     background-size: 26px 26px;
     font-size: 14px;
     font-weight: 600;
@@ -3468,7 +3485,7 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
     right: 0px;
     width: 16px;
     height: 16px;
-    background: #FFF url(/img/delete.png) no-repeat center center;
+    background: #FFF url(../img/delete.png) no-repeat center center;
     background-size: 100% 100%;
     cursor: pointer;
     z-index: 10;
@@ -3531,11 +3548,11 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
 }
 
 .popup.success {
-    background-image: url(/img/complete.png);
+    background-image: url(../img/complete.png);
 }
 
 .popup.warning {
-    background-image: url(/img/warning.png);
+    background-image: url(../img/warning.png);
 }
 
 .popup.medium_size {
@@ -3634,11 +3651,11 @@ body.mobile_view .box.mapBox, .editing_box.mobile_view, .add_project_box.mobile_
     }
 
     .connect_option.skills_option {
-        background-image: url(/img/profile/skills_gray.png);
+        background-image: url(../img/profile/skills_gray.png);
     }
 
     .connect_option.cv_option {
-        background-image: url(/img/profile/cv.png);
+        background-image: url(../img/profile/cv.png);
     }
 
     .connect_option .connect_option_title {

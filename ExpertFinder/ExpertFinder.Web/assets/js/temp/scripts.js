@@ -6,34 +6,34 @@ $(document).ready(function () {
             .addClass('mobile_view');
     }
 
-    //Drop Down Menu show or hide event
-    $(document).on('click', '#userPic_cover, #user_cover_mobile', function (e) {
-        $('.dropDown').hide();
-        $('.navIcon').removeClass('active');
-        $this = $(e.currentTarget);
-        if (!$this.hasClass('active')) {
-            $('#dropMenu').show();
-            $this.addClass('active');
-        }
-        else {
-            $('#dropMenu').hide();
-            $this.removeClass('active');
-        }
-    });
+    ////Drop Down Menu show or hide event
+    //$(document).on('click', '#userPic_cover, #user_cover_mobile', function (e) {
+    //    $('.dropDown').hide();
+    //    $('.navIcon').removeClass('active');
+    //    $this = $(e.currentTarget);
+    //    if (!$this.hasClass('active')) {
+    //        $('#dropMenu').show();
+    //        $this.addClass('active');
+    //    }
+    //    else {
+    //        $('#dropMenu').hide();
+    //        $this.removeClass('active');
+    //    }
+    //});
 
-    //Hide dropdowm menu
-    $(document).on('click', '.container', function (e) {
-        if ($('#userPic_cover').hasClass('active')) {
-            $('#dropMenu').hide();
-            $this.removeClass('active');
-        }
-    });
+    ////Hide dropdowm menu
+    //$(document).on('click', '.container', function (e) {
+    //    if ($('#userPic_cover').hasClass('active')) {
+    //        $('#dropMenu').hide();
+    //        $this.removeClass('active');
+    //    }
+    //});
 
-    //Hide dropdowm menu
-    $(document).on('click', 'h2, #scroll_container', function (e) {
-        $('.dropDown').hide();
-        $('.navIcon').removeClass('active');
-    });
+    ////Hide dropdowm menu
+    //$(document).on('click', 'h2, #scroll_container', function (e) {
+    //    $('.dropDown').hide();
+    //    $('.navIcon').removeClass('active');
+    //});
 
     //Check if screen size is needed in Mobile menu
     $mobile = false;
@@ -240,41 +240,42 @@ $(document).ready(function () {
         }
     });
 
-    //Open small window with Notification
-    $(document).on('click', '.navNotification', function (e) {
-        $this = $(e.currentTarget);
-        if (!$this.hasClass('disable')) {
-            $('.dropDown').hide();
-            if (!$this.hasClass('active')) {
-                $('.navIcon, #userPic_cover, #user_cover_mobile').removeClass('active');
-                $('#dropNotification').show();
-                $this.addClass('active');
-                _NAV_.list('profiles/' + _GB_.user_id + '/updates?offset=0&limit=20', 'notificationUpdate', false);
-            }
-            else {
-                $('#dropNotification').hide();
-                $this.removeClass('active');
-            }
-        }
-    });
+    ////Open small window with Notification
+    //// moved to directive 'shared/menuDropdown'
+    //$(document).on('click', '.navNotification', function (e) {
+    //    $this = $(e.currentTarget);
+    //    if (!$this.hasClass('disable')) {
+    //        $('.dropDown').hide();
+    //        if (!$this.hasClass('active')) {
+    //            $('.navIcon, #userPic_cover, #user_cover_mobile').removeClass('active');
+    //            $('#dropNotification').show();
+    //            $this.addClass('active');
+    //            _NAV_.list('profiles/' + _GB_.user_id + '/updates?offset=0&limit=20', 'notificationUpdate', false);
+    //        }
+    //        else {
+    //            $('#dropNotification').hide();
+    //            $this.removeClass('active');
+    //        }
+    //    }
+    //});
 
     //Open small window with Messages
-    $(document).on('click', '.navMessage', function (e) {
-        $this = $(e.currentTarget);
-        if (!$this.hasClass('disable')) {
-            $('.dropDown').hide();
-            if (!$this.hasClass('active')) {
-                $('.navIcon, #userPic_cover, #user_cover_mobile').removeClass('active');
-                $('#dropMessage').show();
-                $this.addClass('active');
-                _NAV_.list('profiles/' + _GB_.user_id + '/messages?type=inbox&favorite=false&offset=0&limit=20', 'messageUpdate', false);
-            }
-            else {
-                $('#dropMessage').hide();
-                $this.removeClass('active');
-            }
-        }
-    });
+    //$(document).on('click', '.navMessage', function (e) {
+    //    $this = $(e.currentTarget);
+    //    if (!$this.hasClass('disable')) {
+    //        $('.dropDown').hide();
+    //        if (!$this.hasClass('active')) {
+    //            $('.navIcon, #userPic_cover, #user_cover_mobile').removeClass('active');
+    //            $('#dropMessage').show();
+    //            $this.addClass('active');
+    //            _NAV_.list('profiles/' + _GB_.user_id + '/messages?type=inbox&favorite=false&offset=0&limit=20', 'messageUpdate', false);
+    //        }
+    //        else {
+    //            $('#dropMessage').hide();
+    //            $this.removeClass('active');
+    //        }
+    //    }
+    //});
     //Mark message as read (SlideDown and SlideUp whole text of message)
     $(document).on('click', '.show_option', function (e) {
         $this = $(e.currentTarget);
@@ -550,6 +551,8 @@ $(document).ready(function () {
             }
         }
     });
+
+
     //Add proposed skills
     $(document).on('click', '.add_skills', function (e) {
         $this = $(e.currentTarget);

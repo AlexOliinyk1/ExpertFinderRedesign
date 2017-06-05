@@ -1,3 +1,36 @@
-﻿<div>
-    Requests
+﻿<div id="requests_block">
+
+    <ul>
+        <li class="notification" ng-repeat="obj in vm.requests">
+            <div class="user_img">
+                <a href="/profile/{{obj.sender_id}}" class="user_cover_img">
+                    <img src="{{obj.sender_image_url}}" />
+                </a>
+            </div>
+
+            <div class="not_text">
+                <span>{{obj.sender_firstname}} {{obj.sender_surname}}</span> {{obj.text}}
+
+                <div style="display: inline-block; width: 100%;" class="skills_set">
+                    <div ng-repeat="item in obj.skills"
+                         fullSkillJSON='{{item}}'
+                         class='skill'>
+                        <div class="delete_skill"></div> {{item.name}}
+                    </div>
+                </div>
+
+                <div class="buttons-area">
+                    <button class="add_skills act_button actionBtn" value="{{obj._id}}">
+                        Add skill(s) to profile
+                    </button>
+                    <button class="deny_skills pass_button" value="{{obj._id}}">
+                        Reject all
+                    </button>
+                </div>
+            </div>
+            <div class="not_date">{{obj.date}}</div>
+        </li>
+    </ul>
+
+    <div class="list_loader" ng-show="vm.loading"></div>
 </div>

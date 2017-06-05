@@ -31,6 +31,20 @@ h2.mobile_view {
     position: initial;
 }
 
+.sub-menu-offset {
+    padding-top: 50px;
+}
+
+.buttons-area {
+    margin-top: 10px;
+
+    .actionBtn {
+        margin: 0;
+        margin-right: 10px;
+        font-weight: 600;
+        font-size: 12px;
+    }
+}
 
 /*Header*/
 
@@ -132,6 +146,11 @@ h2.mobile_view {
 }
 
 #navBar {
+    .navItem {
+        float: left;
+        margin: 0;
+    }
+
     .navIcon {
         float: left;
         width: 24px;

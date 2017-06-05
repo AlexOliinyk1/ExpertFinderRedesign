@@ -11,6 +11,7 @@
             .state({
                 name: 'communications',
                 controller: 'ComunicationsCtrl',
+                controllerAs: 'vm',
                 templateUrl: 'app/modules/communications/views/communications.html',
                 url: '/communications',
                 redirectTo: 'communications.updates'
@@ -19,19 +20,25 @@
                 name: 'communications.messages',
                 url: '/messages',
                 controller: 'MessagesCtrl',
-                templateUrl: 'app/modules/communications/views/messages.html'
+                controllerAs: 'vm',
+                templateUrl: 'app/modules/communications/views/messages.html',
+                pageTitle: 'Messages'
             })
             .state({
                 name: 'communications.updates',
                 url: '/updates',
-                controller: 'MessagesCtrl',
-                templateUrl: 'app/modules/communications/views/updates.html'
+                controller: 'UpdatesCtrl',
+                controllerAs: 'vm',
+                templateUrl: 'app/modules/communications/views/updates.html',
+                pageTitle: 'My Notifications'
             })
             .state({
                 name: 'communications.requests',
                 url: '/requests',
-                controller: 'MessagesCtrl',
-                templateUrl: 'app/modules/communications/views/requests.html'
+                controller: 'RequestsCtrl',
+                controllerAs: 'vm',
+                templateUrl: 'app/modules/communications/views/requests.html',
+                pageTitle: 'Requests'
             });
     }
 

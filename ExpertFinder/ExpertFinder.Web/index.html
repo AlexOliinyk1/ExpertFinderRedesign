@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="/img/favicon_42.png" type="image/x-icon">
-    <title>News Feed - Expert Finder</title>
+    <title ng-bind="$title + ' - Expert Finder'">News Feed - Expert Finder</title>
     <meta name="keywords" content="Smart Transfer Keywords">
     <meta name="description" content="Smart Transfer Description">
 
@@ -40,11 +40,11 @@
                 <img src="https://expertfinder-dev.smartransfer.de/user_images/ferguson.jpg">
             </div>
             <div id="navBar">
-                <div class="navIcon langCheck langEn " id="en">EN</div>
-                <div class="navIcon langCheck langDe " id="de">DE</div>
-                <div class="navIcon navNotification "></div>
-                <div class="navIcon navMessage "></div>
-                <div class="navIcon navRequest "></div>
+                <!--<div class="navIcon langCheck langEn " id="en">EN</div>
+                <div class="navIcon langCheck langDe " id="de">DE</div>-->
+                <menu-notification></menu-notification>
+                <menu-messages></menu-messages>
+                <menu-requests></menu-requests>
                 <div class="navIcon navMobile mobile ">
                     <select class="mobile" onchange="window.location.href=this.value;">
                         <option selected="selected" translate="ChooseMenuItemUI">- Choose menu item -</option>
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <h2>Page Title</h2>
+        <h2>{{$title}}</h2>
 
         <!-- Content -->
         <div id="scroll_container">
@@ -100,7 +100,7 @@
     <script src="app/modules/search/search.route.js"></script>
     <script src="app/modules/profile/profile.route.js"></script>
 
-    <!-- Controllers -->
+    <!-- View Controllers -->
     <script src="app/modules/communications/controllers/communications.controller.js"></script>
     <script src="app/modules/news/controllers/news.controller.js"></script>
     <script src="app/modules/communications/controllers/messages.controller.js"></script>
@@ -112,12 +112,22 @@
     <!--<script src="app/modules/auth/services/auth.service.js"></script>-->
     <!--<script src="app/modules/auth/services/auth-interceptor.service.js"></script>-->
     <script src="app/modules/news/services/news.service.js"></script>
+    <script src="app/shared/services/request.service.js"></script>
 
     <!-- Directives -->
     <script src="app/shared/directives/show-tab.directive.js"></script>
+    <!--<script src="app/shared/directives/pageTitle/page-title.directive.js"></script>-->
+    <!--<script src="app/shared/directives/menuDropdown/menu-dropdown.controller.js"></script>-->
+    <script src="app/shared/directives/menuNotification/menu-notification.controller.js"></script>
+    <script src="app/shared/directives/menuNotification/menu-notification.directive.js"></script>
+    <script src="app/shared/directives/menuMessages/menu-messages.controller.js"></script>
+    <script src="app/shared/directives/menuMessages/menu-messages.directive.js"></script>
+    <script src="app/shared/directives/menuRequests/menu-requests.controller.js"></script>
+    <script src="app/shared/directives/menuRequests/menu-requests.directive.js"></script>
+    <!-- END Directives -->
 
     <!-- Original Site Scripts -->
-    <script src="assets/js/temp/queries.js"></script>
-    <script src="assets/js/temp/scripts.js"></script>
+    <!--<script src="assets/js/temp/queries.js"></script>-->
+    <!--<script src="assets/js/temp/scripts.js"></script>-->
 </body>
 </html>

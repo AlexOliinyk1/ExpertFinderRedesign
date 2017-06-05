@@ -19,9 +19,8 @@
         function getNews() {
             newsService.getNews(vm.pager)
                 .then(function (news) {
-                    console.log(news[0]);
                     vm.news = news;
-                    offset += news.length;
+                    vm.pager.offset += news.length;
                 });
         }
     }

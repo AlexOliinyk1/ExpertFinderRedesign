@@ -1,0 +1,27 @@
+﻿<div class="navItem" ng-click="$event.stopPropagation()">
+    <div class="navIcon navNotification"
+         ng-class="{active: !vm.isClosed}"
+         ng-click="vm.togglePopup($event)">
+    </div>
+
+    <div id="dropNotification" class="dropDown" ng-hide="vm.isClosed">
+        <ul>
+            <li translate='UpdatesUI'>Updates</li>
+
+            <li id="notificationUpdate" class="shortList" style="padding: 0px;">
+                <div class="list_loader" ng-show="vm.loading"></div>
+
+                <ul ng-show="vm.updates.length > 0 && !vm.loading">
+                    <!-- TODO: place content here -->
+                </ul>
+
+                <div class="no_data" ng-show="vm.updates.length == 0 && !vm.loading">No records...</div>
+            </li>
+
+            <li class="footer">
+                <a ui-sref="communications.updates" href="/updates" class="link" translate="ViewAllUI" ng-click="vm.togglePopup()">View All</a>
+            </li>
+
+        </ul>
+    </div>
+</div>

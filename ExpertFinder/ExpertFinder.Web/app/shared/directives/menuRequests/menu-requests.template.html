@@ -1,0 +1,62 @@
+﻿<div class="navItem" ng-click="$event.stopPropagation()">
+    <div class="navIcon navRequest"
+         ng-click="vm.togglePopup($event)"
+         ng-class="{active: !vm.isClosed}">
+    </div>
+
+    <div id="dropRequest" class="dropDown" ng-hide="vm.isClosed">
+        <ul>
+            <li translate='RequestsTitleUI'>Requests</li>
+
+            <li id="requestUpdate" class="shortList" style="padding: 0px;">
+                <div class="list_loader" ng-show="vm.loading"></div>
+
+                <ul ng-show="vm.requests.length > 0 && !vm.loading">
+                    <li class="notification" ng-repeat="obj in vm.requests">
+                        <div class="user_img">
+                            <a href="/profile/{{obj.sender_id}}" class="user_cover_img">
+                                <img src="{{obj.sender_image_url}}" />
+                            </a>
+                        </div>
+
+                        <div class="not_text">
+                            <span>{{obj.sender_firstname}} {{obj.sender_surname}}</span> {{obj.text}}
+
+                            <!-- skills -->
+                            <div style="display: inline-block; width: 100%;" class="skills_set">
+                                <div ng-repeat="item in obj.skills"
+                                     fullSkillJSON='{{item}}'
+                                     class='skill'>
+                                    {{item.name}}
+                                </div>
+                            </div>
+
+                            <!-- buttons -->
+                            <div class="buttons-area">
+                                <button class="add_skills act_button actionBtn" value="{{obj._id}}">
+                                    Add skills to profile
+                                </button>
+                                <button class="deny_skills pass_button actionBtn" value="{{obj._id}}">
+                                    Deny
+                                </button>
+                                <a class="review pass_button actionBtn" 
+                                   href="/requests" 
+                                   ui-sref="communications.requests" 
+                                   ng-click="vm.togglePopup()">
+                                    Review
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not_date">{{obj.date}}</div>
+                    </li>
+                </ul>
+
+                <div class="no_data" ng-show="vm.requests.length == 0 && !vm.loading">No records...</div>
+            </li>
+
+            <li class="footer">
+                <a ui-sref="communications.requests" href="/requests" class="link" translate="ViewAllUI" ng-click="vm.togglePopup()">View All</a>
+            </li>
+        </ul>
+    </div>
+</div>

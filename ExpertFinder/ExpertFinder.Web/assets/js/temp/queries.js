@@ -283,7 +283,8 @@ _NAV_ = {
                         no_records = false;
                     });
                     if (no_records) {
-                        $('#' + id).append('<div class="no_data">' + locale[lang].NoRecordsMessage + '</div>');
+                        $('#' + id).append('<div class="no_data">No Data</div>');
+                        //$('#' + id).append('<div class="no_data">' + locale[lang].NoRecordsMessage + '</div>');
                     }
                 }
                 else if (type.includes("messages")) {
@@ -428,7 +429,7 @@ _NAV_ = {
                         no_records = false;
                     });
                     if (no_records) {
-                        $('#' + id).append('<div class="no_data">' + locale[lang].NoRecordsMessage + '</div>');
+                        $('#' + id).append('<div class="no_data">No Data</div>');
                     }
                 }
                 else if (type.includes("requests")) {
@@ -468,7 +469,7 @@ _NAV_ = {
                         no_records = false;
                     });
                     if (no_records) {
-                        $('#' + id).append('<div class="no_data">' + locale[lang].NoRecordsMessage + '</div>');
+                        $('#' + id).append('<div class="no_data">No Data</div>');
                     }
                 }
                 if (list) {

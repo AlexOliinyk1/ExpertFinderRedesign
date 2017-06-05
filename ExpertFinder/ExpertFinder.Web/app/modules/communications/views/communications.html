@@ -1,11 +1,12 @@
-﻿<div class="row">
-    <div class="col-md-12">
-        <a href="#/updates" ui-sref="communications.updates">Updates</a> |
-        <a href="#/messages" ui-sref="communications.messages">Messages</a> |
-        <a href="#/requests" ui-sref="communications.requests">Requests</a>
-    </div>
-    <hr />
-    <div class="col-md-12">
-        <div ui-view></div>
-    </div>
+﻿<!--<div class="col-md-12">
+    <a href="#/updates" ui-sref="communications.updates">Updates</a> |
+    <a href="#/messages" ui-sref="communications.messages">Messages</a> |
+    <a href="#/requests" ui-sref="communications.requests">Requests</a>
+</div>-->
+<div id="subHead">
+    <a ng-class="{active: vm.currentPage==='communications.updates'}" href="/updates" ui-sref="communications.updates" style="background-image: url('assets/img/megaphone.png');" translate="UpdatesUI">Updates</a>
+    <a ng-class="{active: vm.currentPage==='communications.messages'}" href="/messages" ui-sref="communications.messages" style="background-image: url('assets/img/message1.png');" translate="MessagesTitleUI">Messages</a>
+    <a ng-class="{active: vm.currentPage==='communications.requests'}" href="/requests" ui-sref="communications.requests" style="background-image: url('assets/img/comments.png');" translate="RequestsTitleUI">Requests</a>
 </div>
+
+<div ui-view class="sub-menu-offset"></div>

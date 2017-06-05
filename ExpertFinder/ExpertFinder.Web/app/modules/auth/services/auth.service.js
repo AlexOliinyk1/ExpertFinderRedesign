@@ -1,4 +1,5 @@
 ﻿(function () {
+    "use strict";
 
     angular.module('expert.auth')
         .factory('AuthService', ['$http', '$q', 'localStorageService', '$rootScope',

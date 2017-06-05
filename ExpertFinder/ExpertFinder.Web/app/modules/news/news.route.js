@@ -13,7 +13,8 @@
                 url: '/news',
                 controller: 'NewsCtrl',
                 controllerAs: 'vm',
-                templateUrl: 'app/modules/news/views/news.html'
+                templateUrl: 'app/modules/news/views/news.html',
+                pageTitle: 'News Feed'
             });
     }
 })();
