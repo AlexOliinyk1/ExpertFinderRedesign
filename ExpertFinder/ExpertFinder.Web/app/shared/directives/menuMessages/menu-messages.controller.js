@@ -1,12 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('expert.core')
-        .controller('MenuMessagesDirectiveCtrl', MenuMessagesDirectiveCtrl);
-
-    MenuMessagesDirectiveCtrl.$inject = ['$scope', '$document', '$timeout'];
-
-    function MenuMessagesDirectiveCtrl($scope, $document, $timeout) {
+    function MenuMessagesDirectiveCtrl($scope, $timeout) {
         var vm = this;
 
         vm.messages = [];
@@ -14,6 +9,7 @@
         vm.loading = false;
         vm.isClosed = true;
         vm.togglePopup = togglePopup;
+        vm.closeEvnt = closeEvt;
 
         function loadMessages() {
             vm.loading = true;
@@ -26,16 +22,11 @@
 
         //  common
         function togglePopup(e) {
-            //if (e) {
-            //    e.stopPropagation();
-            //}
-
             vm.isClosed = !vm.isClosed;
         }
 
         function closeEvt() {
             vm.isClosed = true;
-            $scope.$apply();
         }
 
         function update(close) {
@@ -47,7 +38,10 @@
         }
 
         $scope.$watch('vm.isClosed', update);
-        $document.on('click', closeEvt);
     }
 
+    MenuMessagesDirectiveCtrl.$inject = ['$scope', '$timeout'];
+
+    angular.module('expert.core')
+        .controller('MenuMessagesDirectiveCtrl', MenuMessagesDirectiveCtrl);
 })();

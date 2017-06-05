@@ -1,4 +1,4 @@
-﻿<div class="navItem" ng-click="$event.stopPropagation()">
+﻿<div class="navItem" click-elsewhere="vm.closeEvnt()">
     <div class="navIcon navRequest"
          ng-click="vm.togglePopup($event)"
          ng-class="{active: !vm.isClosed}">
@@ -15,7 +15,7 @@
                     <li class="notification" ng-repeat="obj in vm.requests">
                         <div class="user_img">
                             <a href="/profile/{{obj.sender_id}}" class="user_cover_img">
-                                <img src="{{obj.sender_image_url}}" />
+                                <img ng-src="{{obj.sender_image_url}}" />
                             </a>
                         </div>
 

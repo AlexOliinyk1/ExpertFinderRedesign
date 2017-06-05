@@ -3,7 +3,7 @@
     <div class="nf_block" ng-repeat="news in vm.news">
         <div class="user_img">
             <a href="/profile/{{news.profile_id}}" ui-sref="profile.id({ profileId: news.profile_id })">
-                <img src="{{news.image_url}}" />
+                <img ng-src="{{news.image_url}}" />
             </a>
         </div>
         <div class="user_name_action">

@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    function MenuRequestsDirectiveCtrl($scope, $document, requestService) {
+    function MenuRequestsDirectiveCtrl($scope, requestService) {
         var vm = this;
 
         vm.requests = [];
@@ -9,6 +9,7 @@
         vm.loading = false;
         vm.isClosed = true;
         vm.togglePopup = togglePopup;
+        vm.closeEvnt = closeEvt;
 
         function initialize() {
             vm.loading = true;
@@ -29,22 +30,17 @@
 
         //  common
         function togglePopup(e) {
-            //if (e) {
-            //    e.stopPropagation();
-            //}
             vm.isClosed = !vm.isClosed;
         }
         
-        function closeEvt() {
+        function closeEvt(e) {
             vm.isClosed = true;
-            $scope.$apply();
         }
 
         $scope.$watch('vm.isClosed', reset);
-        $document.on('click', closeEvt);
     }
 
-    MenuRequestsDirectiveCtrl.$inject = ['$scope', '$document', 'RequestService'];
+    MenuRequestsDirectiveCtrl.$inject = ['$scope', 'RequestService'];
 
     angular.module('expert.core')
        .controller('MenuRequestsDirectiveCtrl', MenuRequestsDirectiveCtrl);

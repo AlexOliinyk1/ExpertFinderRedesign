@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    function MenuNotificationDirectiveCtrl($scope, $document, $timeout) {
+    function MenuNotificationDirectiveCtrl($scope, $timeout) {
         var vm = this;
 
         vm.updates = [];
@@ -9,6 +9,7 @@
         vm.loading = false;
         vm.isClosed = true;
         vm.togglePopup = openClose;
+        vm.closeEvnt = closeEvt;
 
         function loadUpdates() {
             vm.loading = true;
@@ -21,14 +22,11 @@
 
         //  common
         function openClose(e) {
-            //if (e) { e.stopPropagation(); }
-
             vm.isClosed = !vm.isClosed;
         }
 
         function closeEvt() {
             vm.isClosed = true;
-            $scope.$apply();
         }
 
         function reset(close) {
@@ -40,10 +38,9 @@
         }
 
         $scope.$watch('vm.isClosed', reset);
-        $document.on('click', closeEvt);
     }
 
-    MenuNotificationDirectiveCtrl.$inject = ['$scope', '$document', '$timeout'];
+    MenuNotificationDirectiveCtrl.$inject = ['$scope', '$timeout'];
 
     angular.module('expert.core')
         .controller('MenuNotificationDirectiveCtrl', MenuNotificationDirectiveCtrl);

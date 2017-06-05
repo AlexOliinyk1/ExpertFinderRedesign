@@ -1,16 +1,12 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('expert.core')
-        .controller('BaseMenuDropdownDirectiveCtrl', BaseMenuDropdownDirectiveCtrl);
-
-    BaseMenuDropdownDirectiveCtrl.$inject = ['$scope', '$document'];
-
-    function BaseMenuDropdownDirectiveCtrl($scope, $document) {
+    function MenuDropdownDirectiveCtrl($scope) {
         var vm = this;
 
         vm.isClosed = true;
         vm.togglePopup = openClose;
+        vm.closeEvnt = closeEvt;
 
         function openClose() {
             vm.isClosed = !vm.isClosed;
@@ -18,11 +14,13 @@
 
         function closeEvt() {
             vm.isClosed = true;
-            $scope.$apply();
         }
-
-        $document.on('click', closeEvt);
     }
+
+    MenuDropdownDirectiveCtrl.$inject = ['$scope'];
+
+    angular.module('expert.core')
+        .controller('BaseMenuDropdownDirectiveCtrl', MenuDropdownDirectiveCtrl);
 
 })();
 
