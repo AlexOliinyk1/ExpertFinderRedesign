@@ -1,0 +1,30 @@
+﻿<div class="navItem" ng-click="$event.stopPropagation()">
+
+    <div id="userPic" ng-click="vm.togglePopup($event)">
+        <img src="https://expertfinder-dev.smartransfer.de/user_images/ferguson.jpg">
+    </div>
+
+    <div id="dropMenu" class="profile_type dropDown" ng-hide="vm.isClosed">
+        <ul>
+            <li style="background-image: url(assets/img/user_filled.png);" class="nameSurname">
+                <a href="/profile/<?php echo _COOKIE_::getCookie(); ?>">My Profile</a>
+            </li>
+            <a href="#">
+                <li style="background-image: url(assets/img/invite.png);" translate='ChooseMenuItemUI'>Invite Colleagues</li>
+            </a>
+            <a href="javascript:void(0);" class="nuggetPage">
+                <li style="background-image: url(assets/img/add_nugget.png);" translate='PostProjectUI'>Post Project</li>
+            </a>
+            <a href="#">
+                <li style="background-image: url(assets/img/help.png);" translate='HelpUI'>Help</li>
+            </a>
+            <a href="#">
+                <li style="background-image: url(assets/img/tour.png);" translate='TakeTheTourUI'>Take the Tour</li>
+            </a>
+            <a href="javascript: void(0);" class="logout">
+                <li style="background-image: url(assets/img/log_out.png); border-top: 1px solid #CCC;" translate='LogOutUI'>Log out</li>
+            </a>
+        </ul>
+    </div>
+
+</div>
